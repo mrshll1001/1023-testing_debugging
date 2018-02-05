@@ -85,11 +85,11 @@ This has been a brief overview of how programmers go about Testing things, and w
 
 1. Testing is just code that checks other code is behaving properly.
 2. To check it's behaving properly all we need to do is:
-  1. Understand what our actual desired result is.
-  2. Check that this is what is happening when our code is used
-  3. Inform ourselves when it's not, so we can fix it.
+  - Understand what our actual desired result is.
+  - Check that this is what is happening when our code is used
+  - Inform ourselves when it's not, so we can fix it.
 2. This can get visually quite messy, so we separate out "Test code" from production code to keep it clean, and let us re-use the Test code in other projects sometimes.
 3. When separated like this, the Test Code can become something called a `Test Class` which has functions in it that test various pieces of our other code.
-  1. A `Test Class` is just a fancy term for a class *you write yourself* to test other code.
+  - A `Test Class` is just a fancy term for a class *you write yourself* to test other code.
 4. Test code can be quite intense, so there exists libraries written by other programmers (like *JUnit*) to help us write our tests by providing methods and classes to make our lives easier.
 5. Using these libraries, we can assemble our own tests by *filling in the logic* of what we want to be the case and asserting it.
