@@ -61,10 +61,13 @@ import awesome_project.ClassThatNeedsTesting; // Remember to import the classes 
 import static org.junit.Assert.*; // JUnit is a code library, so bits of it are imported here just like a Scanner etc.
 import org.junit.Test;
 
-public class SpecialTest { // Our class name should be descriptive of what's being tested. Do not name your test code like this :-P
+// Our class name should be descriptive of what's being tested. Do not name your test code like this :-P
+public class SpecialTest
+{
 
 	@Test // This is a prefix which JUnit uses to communicate with Java that this is a special test function and to treat it differently when run.
-	public void test() {
+	public void test()
+  {
     ClassThatNeedsTesting thingToTest = new ClassThatNeedsTesting(); // Same as before, just create the thing that needs testing
 
     assertTrue(thingToTest.importantVariable); // Instead of writing the if statement ourselves, we use JUnit's functions that it gives us, that handle the logic for us
