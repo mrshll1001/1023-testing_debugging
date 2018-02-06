@@ -37,7 +37,7 @@ public class DogTest extends TestCase
 
 		Dog dog = new Dog(2, "Sid", 0.5, 10); // Create the dog variable to test.
 
-		assertEquals(Dog.class, dog.getClass()); // We want the dog's class to equal the class we created
+		assertEquals(Dog.class, dog.getClass()); // We want the variable class to equal the class we created
 
 	}
 
