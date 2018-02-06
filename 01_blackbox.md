@@ -9,27 +9,28 @@ As you should know from the lecture you definitely attended, Blackbox Testing is
 **Warning: The last part of the practical requires you to work in pairs. If you feel you can't do this (or the rest of your group haven't shown up…) then please let a demonstrator know**
 
 ## Step 1: Setting up the Blackbox
-We're going to get set-up first. You should be intimately familiar with creating Java projects by now, so create a new one in Eclipse or your IDE of choice. Name the project something reasonably sensible. You don't need a Main class yet, but you should create a Package. In Java, a Package is just a folder to help group code but it's used to organise imports too. Name your package something boring like `main`.
+We're going to get set-up first. You should be intimately familiar with creating Java projects by now, so create a new one in Eclipse or your IDE of choice. Name the project something reasonably sensible. You don't need a Main class yet, but you should create a Package. In Java, a Package is just a folder to help group code but it's used to organise imports too. Name your package `main`.
 
 **IMG OF ECLIPSE**
 
-When you're done that, download [this file](#) (`Dog.java`). It's a piece of source code that will be acting as your "Blackbox". For this bit, you'll need to pretend that you can't actually see the source code. In Industry you likely wouldn't be able to see it in your Testing environment.
+When you're done that, download [this file](Dog.java) (`Dog.java`). It's a piece of source code that will be acting as your "Blackbox". For this bit, you'll need to pretend that you can't actually see the source code. In Industry you likely wouldn't be able to see it in your Testing environment.
 
 After downloading this, add it to your project via any means you want. Usually when just adding Java file it's alright to drag and drop the file into the package you created before. This will add the code to the project. Now that our Blackbox is set up, we can get on with the testing portion.
 
 ## Step 2: Setting up the Test Class
-Since we're being nice we've prepared for you a [Test Class](#) to also drop into your project. Don't worry, it's not finished yet so there's still plenty for you to do ;-). First, it's a good idea to have test code in another package. Create another package under your project called `test` and drop the file you just downloaded (`DogTest.java`) into it.
+Since we're being nice we've prepared for you a [Test Class](DogTest.java) to also drop into your project. Don't worry, it's not finished yet so there's still plenty for you to do ;-). First, it's a good idea to have test code in another package. Create another package under your project called `test` and drop the file you just downloaded (`DogTest.java`) into it.
 
 ## Step 3: Running through some Tests
 If you open the `DogTest.java` file you'll see something very much like this:
 
-```java
+```
 package test;
 
 import main.Dog;
 import junit.framework.TestCase;
 
-public class DogTest extends TestCase {
+public class DogTest extends TestCase
+{
 
 	public void testDog() {
 		/* We want to check that our objects are being created properly */
@@ -40,8 +41,51 @@ public class DogTest extends TestCase {
 
 	}
 
-  public void testGetAge() {
+  public void testGetAge()
+  {
 		fail("Not yet implemented");
 	}
 ```
-This is 
+
+This is the JUnit test code that we talked about earlier, but this time there's a whole class of it. Just for laughs, hit the "Play" button in Eclipse whilst in the `DogTest` file. You should see something like this come up:
+
+**IMG of Eclipse**
+
+
+
+You'll notice that the `testDog` method passes (little green tick) and the rest of the methods fail. This is because most of the methods contain a `fail("Not yet implemented")` line. Your task here is to write the tests. We'll walk through one together, the next method that requires writing.
+
+Here we'll be testing the `getAge` method to ensure that it returns the appropriate age. In Testing terms, that means *we want the result of this method to be equal to the value we give it originally*. We can tell from the Dog constructor that it takes an age…
+
+**img of eclipse**
+
+… so we can be pretty certain that if we create a Dog with the age of `5` in the constructor that it should contain the value we need. LEt's use Sid again
+
+```java
+public void testGetAge() {
+  Dog dog = new Dog(5, "Sid", 0.5, 10); // Create the dog variable to test.
+
+  fail("Not yet implemented");
+}
+```
+
+Now that we have our object set up to test, we need to actually test the method. We want to make sure that `dog.getAge()` returns the correct value, which is equal to 5…
+
+```java
+public void testGetAge() {
+  int age = 5
+  Dog dog = new Dog(age, "Sid", 0.5, 10); // Create the dog variable to test.
+
+  assertEquals(age, dog.getAge()); // Assert that the condition is true
+}
+```
+
+That's all there is to it! Remember that the `assert` methods let you describe the *pass condition*. If it isn't equal, the test fails. If you hit play again, JUnit and Eclipse should inform you that this test has passed now. Buuuut the rest of them won't have. You can see where this is going.
+
+## Task: Write the rest of the test cases out.
+Now it's your turn. Write out the rest of the test cases so that each method inside of `DogTest` has an assert statement and no `fail("Not yet implemented")`. You can remove the `fail` methods, these are there to stop you forgetting to write the test in the future.
+
+- Remember to think about the pass conditions. That is what you'll put into the `assert` method.
+- There's more to `assert` than `assertEquals`. Type `assert` into Eclipse then hit Ctrl + Space. Look at all the different assert methods. Some are quite handy.
+
+> Remember these are pretty easy examples, using Getters and Setters. This is just to get the process across. In reality, Testing is needed for more complicated code and methods that require some more computation; meaning errors are more likely.
