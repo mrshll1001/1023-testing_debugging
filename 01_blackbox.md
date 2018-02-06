@@ -53,7 +53,7 @@ This is the JUnit test code that we talked about earlier, but this time there's 
 
 
 
-You'll notice that the `testDog` method passes (little green tick) and the rest of the methods fail. This is because most of the methods contain a `fail("Not yet implemented")` line. Your task here is to write the tests. We'll walk through one together, the next method that requires writing.
+You'll notice that the `testDog` method passes (little green tick) and the rest of the methods fail. This is because most of the methods contain a `fail("Not yet implemented")` line. Our task here is to complete the testing. We'll walk through one together.
 
 Here we'll be testing the `getAge` method to ensure that it returns the appropriate age. In Testing terms, that means *we want the result of this method to be equal to the value we give it originally*. We can tell from the Dog constructor that it takes an age…
 
