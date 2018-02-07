@@ -98,9 +98,15 @@ Now it's your turn. Write out the rest of the test cases so that each method ins
 ## Task: Creating a Test Class from Scratch (kinda)
 You're familiar now with writing out the content of the test methods but you haven't yet begun creating your own Test classes. Download [this Java file](HeapSort.java) and stick it in your project. Remember it's Blackbox testing so no peeking at it.
 
-The file is the implementation of Heap Sort that I ripped off of Github and modified to not need Scanners. You're going to create a test class for it, and test a single public method. Since Eclipse has JUnit built in, it can do some heavy lifting for you here. Right click on your `test` package and select *New -> JUnit Test Case*. In the next screen, you can name your Test Class whatever you want (usually related to the class under testing, with the word "Test" after it e.g. `DogTest`).
+The file is the implementation of Heap Sort that I ripped off of Github and modified to not need Scanners. You're going to create a test class for it, and test a single public method. Since Eclipse has JUnit built in, it can do some heavy lifting for you here. Right click on your `test` package and select *New -> JUnit Test Case*.
+
+!["New Junit"](/img/new_junit.png)
+
+ In the next screen, you can name your Test Class whatever you want (usually related to the class under testing, with the word "Test" after it e.g. `DogTest`).
 
 **The Important bit here is that you select *Class Under Test* at the bottom and select Heap Sort**. This will let you auto-generate some method stubs for testing. In the real world you'd want to test every method, but here we only care about the `sort()` method. Click Finish when you're done.
+
+!["Selecting methods to test"](/img/select_methods.png)
 
 You'll see your auto-generated test class open up. It's up to you now to fill in the Test method to test the `sort()` method.
 
