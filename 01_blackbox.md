@@ -20,6 +20,8 @@ After downloading this, add it to your project via any means you want. Usually w
 ## Step 2: Setting up the Test Class
 Since we're being nice we've prepared for you a [Test Class](DogTest.java) to also drop into your project. Don't worry, it's not finished yet so there's still plenty for you to do ;-). First, it's a good idea to have test code in another package. Create another package under your project called `test` and drop the file you just downloaded (`DogTest.java`) into it.
 
+!["Package Layout"](/img/dog-test.png)
+
 ## Step 3: Running through some Tests
 If you open the `DogTest.java` file you'll see something very much like this:
 
@@ -51,7 +53,7 @@ public class DogTest extends TestCase
 
 This is the JUnit test code that we talked about earlier, but this time there's a whole class of it. Just for laughs, hit the "Play" button in Eclipse whilst in the `DogTest` file. You should see something like this come up:
 
-**IMG of Eclipse**
+!["Test Run"](/img/test_run.png)
 
 
 
@@ -59,7 +61,7 @@ You'll notice that the `testDog` method passes (little green tick) and the rest 
 
 Here we'll be testing the `getAge` method to ensure that it returns the appropriate age. In Testing terms, that means *we want the result of this method to be equal to the value we give it originally*. We can tell from the Dog constructor that it takes an age…
 
-**img of eclipse**
+!["Dog constructor"](/img/dog_constructor.png)
 
 … so we can be pretty certain that if we create a Dog with the age of `5` in the constructor that it should contain the value we need. LEt's use Sid again
 
