@@ -11,7 +11,7 @@ As you should know from the lecture you definitely attended, Blackbox Testing is
 ## Step 1: Setting up the Blackbox
 We're going to get set-up first. You should be intimately familiar with creating Java projects by now, so create a new one in Eclipse or your IDE of choice. Name the project something reasonably sensible. You don't need a Main class yet, but you should create a Package. In Java, a Package is just a folder to help group code but it's used to organise imports too. Name your package `main`.
 
-!["New -> Package"](/img/package.png "New Package")
+!["New -> Package"](/img/package.png)
 
 When you're done that, download [this file](Dog.java) (`Dog.java`). It's a piece of source code that will be acting as your "Blackbox". For this bit, you'll need to pretend that you can't actually see the source code. In Industry you likely wouldn't be able to see it in your Testing environment.
 
