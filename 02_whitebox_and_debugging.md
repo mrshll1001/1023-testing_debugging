@@ -110,12 +110,16 @@ Eclipse will then ask you to change perspective. Don't worry, it's not asking yo
 
 !["Debug perspective"](/img/debug_perspective.png)
 
-The most important things to consider are: the *Variables* tab, which shows you the current state of the system including values of variables (you can actually force-change them as well if you want); and the commands *Step Into* and *Step Over*.
+The most important things to consider are: the *Variables* tab, which shows you the current state of the system including values of variables (you can actually force-change them as well if you want)…
 
-!["Variables"](/img/debug_variables.png) !["Step Commands"](/img/debug_steppers.png)
 
-**Step Into** will execute the next line of code, and if this contains a method call, will enter the method. This allows you to dissect how the values are passed into and out of methods.
-**Step Over** will execute the code but will not go a level deeper into the code. If you step over a method call, the method is executed but the debugger will move to the next line. Consider the following code:
+!["Variables"](/img/debug_variables.png)
+
+and the commands *Step Into* and *Step Over*.
+
+!["Step Commands"](/img/debug_steppers.png)
+
+**Step Into** will execute the next line of code, and if this contains a method call, will enter the method. This allows you to dissect how the values are passed into and out of methods. **Step Over** will execute the code but show you the level deeper. If you step over a method call, the method is executed but the debugger will move to the next line. Consider the following code:
 
 ```java
 
