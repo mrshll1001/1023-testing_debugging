@@ -2,7 +2,7 @@
 
 [<- Back home](index)
 
-This exercise is designed to get you familiar with Blackbox Testing. Through doing this you'll also be using JUnit and probably inside of Eclipse. If you don't use Eclipse and use another IDE, ask a demonstrator. They probably have a favourite IDE anyway and will be happy to help you get set up.
+This exercise is designed to get you familiar with Blackbox Testing. Through doing this you'll also be using JUnit and probably be inside of Eclipse. If you don't use Eclipse and use another IDE, ask a demonstrator. They probably have a favourite IDE anyway and will be happy to help you get set up.
 
 As you should know from the lecture you definitely attended, Blackbox Testing is a form of Testing wherein you don't know anything about the structure of the code being Tested and thus cannot make changes. In Industry environments there'll likely be an automatic warning system when a test fails, and that code will be sent back to the development stage to fix. This exercise will try its best to give the feel of a Testing process in industry and research, but if you have any questions about why things are being done in a particular way, let us know; we like to be kept on our toes! It will also require you to pretend you cannot see some of the code for a bit.
 
@@ -37,11 +37,12 @@ public class DogTest extends TestCase
 	public void testDog()
   {
 		/* We want to check that our objects are being created properly */
+		// Create the dog variable to test.
+		Dog dog = new Dog(2, "Sid", 0.5, 10);
 
-		Dog dog = new Dog(2, "Sid", 0.5, 10); // Create the dog variable to test.
+		// We want the variable class to equal the class we created
 
-		assertEquals(Dog.class, dog.getClass()); // We want the variable class to equal the class we created
-
+		assertEquals(Dog.class, dog.getClass());
 	}
 
   public void testGetAge()
@@ -63,11 +64,12 @@ Here we'll be testing the `getAge` method to ensure that it returns the appropri
 
 !["Dog constructor"](/img/dog_constructor.png)
 
-… so we can be pretty certain that if we create a Dog with the age of `5` in the constructor that it should contain the value we need. LEt's use Sid again
+… so we can be pretty certain that if we create a Dog with the age of `5` in the constructor that it should contain the value we need. Let's use Sid again
 
 ```java
 public void testGetAge() {
-  Dog dog = new Dog(5, "Sid", 0.5, 10); // Create the dog variable to test.
+	// Create the dog variable to test.
+  Dog dog = new Dog(5, "Sid", 0.5, 10);
 
   fail("Not yet implemented");
 }
@@ -77,10 +79,12 @@ Now that we have our object set up to test, we need to actually test the method.
 
 ```java
 public void testGetAge() {
+	// Create the dog variable to test.
   int age = 5
-  Dog dog = new Dog(age, "Sid", 0.5, 10); // Create the dog variable to test.
+  Dog dog = new Dog(age, "Sid", 0.5, 10);
 
-  assertEquals(age, dog.getAge()); // Assert that the condition is true
+	// Assert that the condition is true
+  assertEquals(age, dog.getAge());
 }
 ```
 
@@ -98,7 +102,7 @@ Now it's your turn. Write out the rest of the test cases so that each method ins
 ## Task: Creating a Test Class from Scratch (kinda)
 You're familiar now with writing out the content of the test methods but you haven't yet begun creating your own Test classes. Download [this Java file](HeapSort.java) and stick it in your project. Remember it's Blackbox testing so no peeking at it.
 
-The file is the implementation of Heap Sort that I ripped off of Github and modified to not need Scanners. You're going to create a test class for it, and test a single public method. Since Eclipse has JUnit built in, it can do some heavy lifting for you here. Right click on your `test` package and select *New -> JUnit Test Case*.
+The file is the implementation of Heap Sort that I ripped [off of Github](https://github.com/TheAlgorithms/Java) (link to original repo) and modified to not need Scanners. You're going to create a test class for it, and test a single public method. Since Eclipse has JUnit built in, it can do some heavy lifting for you here. Right click on your `test` package and select *New -> JUnit Test Case*.
 
 !["New Junit"](/img/new_junit.png)
 
@@ -108,14 +112,15 @@ The file is the implementation of Heap Sort that I ripped off of Github and modi
 
 !["Selecting methods to test"](/img/select_methods.png)
 
-You'll see your auto-generated test class open up. It's up to you now to fill in the Test method to test the `sort()` method.
+You'll see your auto-generated test class open up. It's up to you now to fill in the Test method to test the `sort()` method. Once you've done this, you've finished your first Test Class (it isn't very thorough, but still. Nice work.)
 
 Tips:
 - The HeapSort class takes an array of integers in its constructor to sort.
 - The `sort()` method also returns a new array of (supposedly) sorted integers.
+- If you're interested in how HeapSort works, you can watch [this video](https://www.youtube.com/watch?v=MtQL_ll5KhQ). Understanding the algorithm isn't necessary for the task - all you care about is that it sorts things.
 
 ## Task: Peer learning!
-For this task you're going to test each other's code. You can either: Pair up and work in a pair; work in groups and divide the group in two. Either works. Then do the following:
+For this task you're going to test each other's code. You can either: Pair up and work in a pair; or work in groups and divide the group in two. Either works. Then do the following:
 
 1. Each half (of the pair or group) writes a **simple** class in Java that does a thing. It can be anything as long as the following conditions are met:
   - It has a constructor which takes some variables.
@@ -126,3 +131,6 @@ For this task you're going to test each other's code. You can either: Pair up an
 2. When done, swap your class and documentation with the other person / half of the group. Don't send over the whole project, just the `.java` file (in the *src* folder inside the Eclipse Workspace)
 3. Now you have the other class file, create a test class with appropriate tests for it using the documentation provided by the other half.
 4. Speak with the other person (or people) about where you think the error was. Was there more than one error? Was the error caused by the class being tested, or was there an error in testing?
+
+
+Once you're done with that, you can move on to [Whitebox Testing and Debugging](02_whitebox_and_debugging)

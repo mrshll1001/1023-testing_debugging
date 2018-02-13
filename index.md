@@ -4,7 +4,7 @@ title: CSC1023 Testing & Debugging
 ---
 
 # CSC1023 Testing & Debugging
-These are are CSC1023 Practical worksheets around Testing and Debugging. These practicals **are not assessed** but Testing and Debugging are becoming increasingly valuable skills in Software Engineering. Testing and Debugging can be a [dedicated job](https://www.cwjobs.co.uk/jobs/software-testing) in its own right, and large suites of complex tools can make the process seem abstract. In actuality, however, you've probably been doing informal Testing and Debugging work throughout Semester 1 already (or at least we hope so). These exercises are designed to show you how to pragmatically engage Testing and Debugging to not only develop your skills here, but to make your overall workflow easier when it comes to the rest of your programming life.
+These are the CSC1023 Practical worksheets around Testing and Debugging. These practicals **are not assessed** but Testing and Debugging are becoming increasingly valuable skills in Software Engineering. Testing and Debugging can be a [dedicated job](https://www.cwjobs.co.uk/jobs/software-testing) in its own right, and large suites of complex tools can make the process seem abstract. In actuality, however, you've probably been doing informal Testing and Debugging work throughout Semester 1 already (or at least we hope so). These exercises are designed to show you how to pragmatically engage Testing and Debugging to not only develop your skills here, but to make your overall workflow easier when it comes to the rest of your programming life.
 
 
 ## How Testing is performed on-the-ground (generally)
@@ -52,7 +52,7 @@ That's all great so far, right? Yep, but we can take it a step further. Usually,
 
 > Remember, a library is just code that other people have written and that we can download and use. An example from your coursework would be the Scanner class from Java -- you didn't do the work of writing the code behind Scanner, but you can import and use the Scanner class to achieve your goal. The same is true of Testing libraries.
 
-The most popular testing library for Java is called **JUnit**. It's actually so popular that a lot of IDEs such as Eclipse integrate it into their own code. JUnit (and other testing libraries!) provide you with classes and methods that you can use to make your own Test Classes a lot more efficient, a lot simpler to write, and a lot easier to understand in plain english. Let's rewrite our Test Class from before in JUnit, with this in mind.
+The most popular testing library for Java is called **JUnit**. It's actually so popular that a lot of IDEs such as Eclipse integrate it into their own code. JUnit (and other testing libraries!) provide you with classes and methods that you can use to make your own Test Classes a lot more efficient, a lot simpler to write, and a lot easier to understand in plain English. Let's rewrite our Test Class from before in JUnit, with this in mind.
 
 ```java
 // Test code can live in its own package to stay separate
