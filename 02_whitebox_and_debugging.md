@@ -101,3 +101,48 @@ By now we've done a lot of Testing but not a lot of Debugging. As you know from 
 Right now we're going to focus on using Breakpoints in Eclipse, although most IDEs will use the same methods to add them. To create a Breakpoint in the code, you should first find a line you want to pause at. It could be in the middle of a method, or at an if statement. In the IDE, there's a margin to the left of the code that you can Double-Click or Right Click and select *Toggle Breakpoint*
 
 !["New Breakpoint"](/img/new_breakpoint.png)
+
+Now that we have breakpoint, we can use it. To debug some code, you need to run it so you need to debug a class which has a `main` method in Java. You can do this by right-clicking it in the package browser in Eclipse and selecting *Debug as -> Java Application*
+
+!["Debug As"](/img/debug_as.png)
+
+Eclipse will then ask you to change perspective. Don't worry, it's not asking you to take a long deep look at yourself; it just wants to move some tabs around to make debugging a bit easier on you. Accept and your screen will shift to look like this:
+
+!["Debug perspective"](/img/debug_perspective.png)
+
+The most important things to consider are: the *Variables* tab, which shows you the current state of the system including values of variables (you can actually force-change them as well if you want); and the commands *Step Into* and *Step Over*.
+
+!["Variables"](/img/debug_variables.png) !["Step Commands"](/img/debug_steppers.png)
+
+**Step Into** will execute the next line of code, and if this contains a method call, will enter the method. This allows you to dissect how the values are passed into and out of methods.
+**Step Over** will execute the code but will not go a level deeper into the code. If you step over a method call, the method is executed but the debugger will move to the next line. Consider the following code:
+
+```java
+
+public static void main(String[] args)
+{
+  int x = 13;
+  int y = 14;
+
+  foo(x);
+  foo(y);
+}
+
+public static void foo(int input)
+{
+  input = input * 100;
+}
+```
+
+If we want to debug the main method, we run the debugger and put a break point in it somewhere. Let's say we put it at the line `foo(x)`. When the code executes and hits the break point it pauses and shows you the line in the debugger.
+
+ - If we select *Step Into* the debugger will take us execute `foo(x)` and take us step-by-step through the `foo` method as it does so.
+ - Else, if we select *Step Over* the debugger will execute `foo(x)` in the background as "normal" and move to the line `foo(y)`.
+
+Neat!
+
+## Task: Debug and fix some code
+This final task will see you utilising Debugging and Whitebox Testing in order to fix a few errors. The details are as follows:
+
+1. Revisit `DogTest.java`. Remember how there was (at least) one error left over after testing? You can now open `Dog.java` and play with it. The error should be fixable using Code Inspection, but you still need the practice with Breakpoints here. Which method failed? Place a breakpoint there, and inspect the value of variables. Modify the class, make a comment next to the modification in the code, and retest it.
+2. You should also have errors present in the code you received from the peer learning exercise last practical. Study the code you were given and create a Whitebox Test Class that tries to execute all portions of the code. When you encounter an error in the testing (again there should be at least one) utilise the Eclipse debugger to inspect every method.
