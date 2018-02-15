@@ -69,7 +69,7 @@ public void testWeirdMethodEven()
 Good stuff. Our weird method has been thoroughly tested with Whitebox Testing and we can pat ourselves on the back.
 
 ## Task: Write a (basic) Whitebox Test Class
-I've written another Class that requires testing, which you can download [here](Collatz.java). This is a whitebox, so feel free to peek at it. This is a very basic implemtation of the Collatz Conjecture. [Here's a video explaining it](https://www.youtube.com/watch?v=5mFpVDpKX70). It's pretty basic to code, but kinda fun in a nerdy way.
+I've written another Class that requires testing, which you can download [here](Collatz.java). This is a whitebox, so feel free to peek at it. This is a very basic implementation of the Collatz Conjecture. [Here's a video explaining it](https://www.youtube.com/watch?v=5mFpVDpKX70). It's pretty basic to code, but kinda fun in a nerdy way.
 
 Because we're doing Whitebox testing, we can peek at the code. Take a look at the Collatz class. Read it through line by line. Now, make a Test Class for the Collatz class. Remember that in Whitebox testing you know the code, so you want to be deliberately firing off different conditions.
 
