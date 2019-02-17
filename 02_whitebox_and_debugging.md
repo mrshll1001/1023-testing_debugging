@@ -85,7 +85,7 @@ Do you remember the `TaxCalculator` class that you wrote for the first CSC1021 c
 The reason that we're bringing that back up is because, as you might have noticed, producing some code to do Whitebox Testing on can seem a bit forced. Luckily, your previous coursework is already perfect for Whitebox testing because you have a knowledge of the code itself, and it contains lots of conditional structures that only execute sometimes. So for this task, complete the following:
 
 1. Take the `TaxCalculator` class from your first CSC1021 Java coursework and dump it into your `main` package. If you followed the original specification properly, you shouldn't need to change the class at all to use it elsewhere.
-  - If for some reason you feel you can't use the TaxCalculator that you wrote feel free to use [this one](TaxCalculator.java) kindly provided by *Student 8* who produced it two years ago.
+  - If for some reason you feel you can't use the TaxCalculator that you wrote feel free to use [this one](TaxCalculator.java) kindly provided by *Student 8* who produced it years ago.
 2. Write a test class for it utilising Whitebox style. Remember the point is to write a series of tests that *ensure all code is executed*. This means examining loops and conditions and trying to write test cases that explicitly trigger each different case. Chances are you did something similar when writing this code originally; except now you know how to do it properly in a shiny new Test Class :-)
 
 ## Quick Breather: Debugging
